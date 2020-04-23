@@ -1,0 +1,11 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="APSpaceShooter">
+    <output-path>$PROJECT_DIR$/out/artifacts/APSpaceShooter</output-path>
+    <root id="archive" name="APSpaceShooter.jar">
+      <element id="module-output" name="SpaceShooter2HARD" />
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/META-INF/MANIFEST.MF" />
+      </element>
+    </root>
+  </artifact>
+</component>

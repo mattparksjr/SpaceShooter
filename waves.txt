@@ -1,0 +1,24 @@
+# WAVE FILE
+# This file is where each wave is stored, blank lines and hashtags are not counted
+# A wave is determined by the enemy spawn point, as such each wave is just a list of spawn points
+# A foward slash(/) determines a break between enemies
+# In each section, an x and y are defined by a x(comma)y
+# As such, an example would be 0,0/ would be one enemy, located at x:0 and y:0
+
+# Wave 1
+56,66/109,66/162,66/225,66
+
+# Wave 2
+#56,66/109,66/162,66/225,66
+
+# Wave 3
+#5,66/69,66/151,66/215,66/280,66
+
+# Wave 4
+#5,66/69,66/151,66/215,66/280,66/69,45/215,45
+
+# Wave 5
+#5,66/69,66/151,66/215,66/280,66/69,45/215,45/151,45
+
+# Wave 6
+#5,66/69,66/151,66/215,66/280,66/69,45/215,45/151,45/151,24
