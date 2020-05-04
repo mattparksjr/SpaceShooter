@@ -24,6 +24,12 @@ public class WaveMaster {
         readWaves();
     }
 
+    public void reset() {
+        waveSpawned = false;
+        didMove = false;
+        wave = 0;
+    }
+
     public void startWaves() {
         for (Coord loc : getWaves().get(wave)) {
             Main.getInstance().getCurrentEnemies().add(new EnemyBasic(loc.getX(), loc.getY()));

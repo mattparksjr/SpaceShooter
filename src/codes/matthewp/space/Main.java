@@ -2,9 +2,6 @@ package codes.matthewp.space;
 
 import codes.matthewp.space.game.*;
 import codes.matthewp.space.gui.GuiMaster;
-import codes.matthewp.space.gui.mainmenu.MainMenu;
-import codes.matthewp.space.gui.replay.ReplayGUI;
-import codes.matthewp.space.gui.replay.ReplayReason;
 import codes.matthewp.space.input.KeyListen;
 import codes.matthewp.space.input.MouseListen;
 import codes.matthewp.space.thread.UpdateThread;
@@ -131,6 +128,10 @@ public class Main extends JFrame {
 
     public Player getPlayer() {
         return player;
+    }
+
+    public void setPlayer(Player player) {
+        this.player = player;
     }
 
     public List<Bullet> getBulletList() {
