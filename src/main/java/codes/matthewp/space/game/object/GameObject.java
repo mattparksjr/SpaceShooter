@@ -1,10 +1,10 @@
-package codes.matthewp.space.game;
+package codes.matthewp.space.game.object;
 
 import codes.matthewp.space.Main;
 
 import java.awt.*;
 
-public class GameObject {
+public class GameObject implements Cloneable {
 
     public Image img;
     public int x;
@@ -24,6 +24,7 @@ public class GameObject {
         hitbox = new Rectangle(x, y, width, height);
     }
 
+
     public void draw(Graphics g) {
         g.drawImage(img, x, y, width, height, null);
         // USED TO DEBUG HITBOXES, and coords
@@ -37,4 +38,39 @@ public class GameObject {
     public void update() {
         hitbox.setLocation(x, y);
     }
+
+    public int getX() {
+        return x;
+    }
+
+    public void setX(int x) {
+        this.x = x;
+    }
+
+    public int getY() {
+        return y;
+    }
+
+    public void setY(int y) {
+        this.y = y;
+    }
+
+    public Object clone() {
+        try {
+            return super.clone();
+        } catch (CloneNotSupportedException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public Type getType() {
+        return Type.OTHER;
+    }
+
+    public enum Type {
+        ENEMY,
+        OTHER,
+    }
+
 }

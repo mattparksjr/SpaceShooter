@@ -1,6 +1,11 @@
 package codes.matthewp.space;
 
-import codes.matthewp.space.game.*;
+import codes.matthewp.space.game.MenuState;
+import codes.matthewp.space.game.ObjectRegistry;
+import codes.matthewp.space.game.object.Bullet;
+import codes.matthewp.space.game.object.EnemyBasic;
+import codes.matthewp.space.game.object.Player;
+import codes.matthewp.space.game.wave.WaveMaster;
 import codes.matthewp.space.gui.GuiMaster;
 import codes.matthewp.space.input.KeyListen;
 import codes.matthewp.space.input.MouseListen;
@@ -15,6 +20,7 @@ public class Main extends JFrame {
 
     private Player player;
     private Image img;
+    private ObjectRegistry objectRegistry;
     private Graphics graphics;
     private static Main instance;
     private List<Bullet> bulletList;
@@ -39,6 +45,8 @@ public class Main extends JFrame {
         setVisible(true);
         setBackground(Color.BLACK);
         player = new Player(getImg("spaceShooterPlayer.png"), 150, 280, 16, 16, 20);
+        objectRegistry = new ObjectRegistry();
+        registerObjects();
         bulletList = new ArrayList<>();
         deadBullets = new ArrayList<>();
         addKeyListener(new KeyListen());
@@ -107,6 +115,10 @@ public class Main extends JFrame {
         }
     }
 
+    private void registerObjects() {
+        objectRegistry.register("eBasic", new EnemyBasic(0, 0));
+    }
+
     public static Image getImg(String path) {
         return Toolkit.getDefaultToolkit().getImage(path);
     }
@@ -120,6 +132,10 @@ public class Main extends JFrame {
     public void endGame() {
         runUpdate = false;
         menuState = MenuState.REPLAY_LOSS;
+    }
+
+    public ObjectRegistry getObjectRegistry() {
+        return objectRegistry;
     }
 
     public static Main getInstance() {

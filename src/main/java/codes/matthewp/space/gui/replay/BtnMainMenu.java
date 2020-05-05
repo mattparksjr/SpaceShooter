@@ -1,7 +1,7 @@
 package codes.matthewp.space.gui.replay;
 
 import codes.matthewp.space.Main;
-import codes.matthewp.space.game.Player;
+import codes.matthewp.space.game.object.Player;
 import codes.matthewp.space.gui.Button;
 import codes.matthewp.space.thread.UpdateThread;
 
@@ -23,6 +23,5 @@ public class BtnMainMenu extends Button {
         Main.getInstance().getBulletList().clear();
         Main.getInstance().setPlayer(new Player(Main.getImg("spaceShooterPlayer.png"), 150, 280, 16, 16, 20));
         Main.getInstance().getWaveMaster().startWaves();
-        System.out.println("CLICKED!");
     }
 }

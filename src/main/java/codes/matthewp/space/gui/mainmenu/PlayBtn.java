@@ -15,6 +15,5 @@ public class PlayBtn extends Button {
         Main.menuState = null;
         Main.getInstance().updateThread = new UpdateThread();
         Main.getInstance().updateThread.start();
-        System.out.println("CLICKED!");
     }
 }

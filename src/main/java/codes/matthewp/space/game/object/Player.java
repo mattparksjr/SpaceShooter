@@ -1,4 +1,4 @@
-package codes.matthewp.space.game;
+package codes.matthewp.space.game.object;
 
 import codes.matthewp.space.Main;
 import codes.matthewp.space.util.MathHelp;

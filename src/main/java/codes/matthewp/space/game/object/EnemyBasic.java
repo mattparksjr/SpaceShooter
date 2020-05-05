@@ -1,4 +1,4 @@
-package codes.matthewp.space.game;
+package codes.matthewp.space.game.object;
 
 import codes.matthewp.space.Main;
 
@@ -24,5 +24,10 @@ public class EnemyBasic extends GameObject {
         if (y > 280) {
             Main.getInstance().endGame();
         }
+    }
+
+    @Override
+    public Type getType() {
+        return Type.ENEMY;
     }
 }

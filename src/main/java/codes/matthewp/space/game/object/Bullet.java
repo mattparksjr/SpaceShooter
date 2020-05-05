@@ -1,4 +1,4 @@
-package codes.matthewp.space.game;
+package codes.matthewp.space.game.object;
 
 import codes.matthewp.space.Main;
 
@@ -19,19 +19,20 @@ public class Bullet extends GameObject {
             y++;
         }
 
-        if(hitbox.intersects(Main.getInstance().getPlayer().hitbox) && shooter != Main.getInstance().getPlayer()) {
-            Main.getInstance().getPlayer().health =  Main.getInstance().getPlayer().health - 10;
+        if (hitbox.intersects(Main.getInstance().getPlayer().hitbox) && shooter != Main.getInstance().getPlayer()) {
+            Main.getInstance().getPlayer().health = Main.getInstance().getPlayer().health - 10;
             Main.getInstance().getDeadBullets().add(this);
             Main.getInstance().getPlayer().checkHealth();
         }
 
-        boolean remove = Main.getInstance().getCurrentEnemies().removeIf(enemyBasic -> hitbox.intersects(enemyBasic.hitbox) && enemyBasic != shooter);
+        boolean remove = Main.getInstance().getCurrentEnemies()
+                .removeIf(enemyBasic -> hitbox.intersects(enemyBasic.hitbox) && enemyBasic != shooter && shooter.getType() != GameObject.Type.ENEMY);
 
-        if(remove) {
+        if (remove) {
             Main.getInstance().getDeadBullets().add(this);
         }
 
-        if(Main.getInstance().getCurrentEnemies().isEmpty()) {
+        if (Main.getInstance().getCurrentEnemies().isEmpty()) {
             Main.getInstance().getWaveMaster().waveComplete();
         }
         if (y < 0 || y > 300) {
