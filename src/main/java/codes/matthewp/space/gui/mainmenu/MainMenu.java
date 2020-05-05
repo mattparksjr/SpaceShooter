@@ -1,7 +1,10 @@
 package codes.matthewp.space.gui.mainmenu;
 
+import codes.matthewp.space.Main;
 import codes.matthewp.space.game.MenuState;
-import codes.matthewp.space.gui.IGUI;
+import codes.matthewp.space.gui.componet.Button;
+import codes.matthewp.space.gui.componet.IGUI;
+import codes.matthewp.space.thread.UpdateThread;
 
 import java.awt.*;
 
@@ -9,7 +12,11 @@ public class MainMenu extends IGUI {
 
     public MainMenu() {
         super(MenuState.MAIN_MENU);
-        buttonList.add(new PlayBtn("PLAY", 125, 150));
+        buttonList.add(new Button("PLAY", 125, 150, () -> {
+            Main.menuState = null;
+            Main.getInstance().updateThread = new UpdateThread();
+            Main.getInstance().updateThread.start();
+        }));
     }
 
     @Override

@@ -1,4 +1,4 @@
-package codes.matthewp.space.gui;
+package codes.matthewp.space.gui.componet;
 
 import codes.matthewp.space.Main;
 import codes.matthewp.space.game.MenuState;

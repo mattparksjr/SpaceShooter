@@ -1,4 +1,4 @@
-package codes.matthewp.space.gui;
+package codes.matthewp.space.gui.componet;
 
 import codes.matthewp.space.Main;
 
@@ -15,12 +15,14 @@ public class Button {
     private double height;
     private String text;
     private Font f;
+    private BtnClick btnClick;
     private Image img = Main.getImg("btnBase.png");
 
-    public Button(String text, int x, int y) {
+    public Button(String text, int x, int y, BtnClick func) {
         this.x = x;
         this.y = y;
         this.text = text;
+        this.btnClick = func;
         this.f = new Font("TimesRoman", Font.PLAIN, 18);
         AffineTransform affinetransform = new AffineTransform();
         FontRenderContext frc = new FontRenderContext(affinetransform, true, true);
@@ -30,7 +32,7 @@ public class Button {
     }
 
     public void onClick() {
-
+        btnClick.onClick();
     }
 
     public void render(Graphics2D g2d) {

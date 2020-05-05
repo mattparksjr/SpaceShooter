@@ -2,6 +2,7 @@ package codes.matthewp.space.gui;
 
 import codes.matthewp.space.Main;
 import codes.matthewp.space.game.MenuState;
+import codes.matthewp.space.gui.componet.IGUI;
 import codes.matthewp.space.gui.mainmenu.MainMenu;
 import codes.matthewp.space.gui.replay.ReplayGUI;
 import codes.matthewp.space.gui.replay.ReplayReason;
